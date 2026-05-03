@@ -41,7 +41,6 @@
             line-height: 1.5;
         }
 
-        /* ----- HEADER ----- */
         .header {
             text-align: center;
             margin-bottom: 30px;
@@ -61,7 +60,6 @@
             margin-top: 4px;
         }
 
-        /* ----- ЛЕВАЯ КОЛОНКА: КАЛЬКУЛЯТОР ----- */
         .main-grid {
             display: grid;
             grid-template-columns: 1fr 300px;
@@ -146,7 +144,6 @@
             background: #263148;
         }
 
-        /* ----- РЕШЕНИЕ ----- */
         .solution-box {
             margin-top: 20px;
             background: #0f172a;
@@ -198,7 +195,6 @@
             color: #4ade80;
         }
 
-        /* ----- ПРАВАЯ КОЛОНКА ----- */
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -229,7 +225,6 @@
             font-weight: 700;
         }
 
-        /* ----- БЛОК РЕКЛАМЫ ----- */
         .ad-card {
             background: var(--card);
             border: 1px solid var(--border);
@@ -241,7 +236,6 @@
             justify-content: center;
         }
 
-        /* ----- МОДАЛЬНОЕ ОКНО ----- */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -299,7 +293,6 @@
             color: #f87171;
         }
 
-        /* ----- ФУТЕР ----- */
         .footer {
             margin-top: 30px;
             text-align: center;
@@ -315,7 +308,6 @@
             text-decoration: underline;
         }
 
-        /* ----- АДАПТИВ ----- */
         @media (max-width: 768px) {
             .main-grid {
                 grid-template-columns: 1fr;
@@ -331,16 +323,13 @@
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
     <div class="header">
         <h1>🧮 MathSolve</h1>
         <p>Бесплатный пошаговый решатель — введи пример и получи решение</p>
     </div>
 
-    <!-- ===== ОСНОВНАЯ СЕТКА ===== -->
     <div class="main-grid">
 
-        <!-- ЛЕВАЯ КОЛОНКА: КАЛЬКУЛЯТОР -->
         <div class="card">
             <h2><span class="icon">✏️</span> Введи задачу</h2>
             <textarea id="mathInput" placeholder="Например: 2*x^2 - 8 = 0   или   (x^2-4)/(x-2)   или   3*sqrt(49) + 12"></textarea>
@@ -349,7 +338,6 @@
                 <button class="btn btn-ghost" onclick="clearAll()">🗑 Очистить</button>
             </div>
 
-            <!-- БЛОК РЕШЕНИЯ -->
             <div class="solution-box" id="solutionBox">
                 <h3>📖 Пошаговое решение</h3>
                 <div id="stepsContainer"></div>
@@ -357,12 +345,10 @@
             </div>
         </div>
 
-        <!-- ПРАВАЯ КОЛОНКА: САЙДБАР -->
         <div class="sidebar">
 
             <!-- БЛОК РЕКЛАМЫ РСЯ -->
             <div class="ad-card">
-                <!-- Yandex.RTB R-A-19206543-1 -->
                 <div id="yandex_rtb_R-A-19206543-1"></div>
                 <script>
                 window.yaContextCb.push(() => {
@@ -388,139 +374,92 @@
 
     </div>
 
-    <!-- ===== МОДАЛЬНОЕ ОКНО: ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ ===== -->
     <div class="modal-overlay" id="privacyModal">
         <div class="modal">
             <button class="close-btn" onclick="closePrivacy()">✕</button>
             <h2>🔒 Политика конфиденциальности</h2>
             <p><strong>Дата обновления:</strong> 3 мая 2026</p>
-
             <h3>1. Какие данные мы собираем</h3>
             <p>Мы не собираем персональные данные напрямую. Вы можете пользоваться калькулятором анонимно, без регистрации.</p>
-
             <h3>2. Файлы cookie и реклама</h3>
             <p>Мы используем файлы cookie для персонализации контента и рекламы, а также для анализа трафика. Мы также передаём информацию о ваших действиях на сайте нашим партнёрам по рекламе и аналитике.</p>
-
             <h3>3. Яндекс.РСЯ и Google AdSense</h3>
             <p>Яндекс и Google, как сторонние поставщики, используют файлы cookie для показа рекламы на нашем сайте.</p>
-            <p>Вы можете отказаться от использования файлов cookie для персонализированной рекламы, посетив страницу <a href="https://adssettings.google.com" target="_blank" rel="noopener">Настройки рекламы Google</a> или <a href="https://yandex.ru/support/id/authorization/disable-cookies.html" target="_blank" rel="noopener">настройки Яндекса</a>.</p>
-
+            <p>Вы можете отказаться от использования файлов cookie для персонализированной рекламы, посетив <a href="https://yandex.ru/support/id/authorization/disable-cookies.html" target="_blank" rel="noopener">настройки Яндекса</a>.</p>
             <h3>4. Как отключить cookie в браузере</h3>
-            <p>Вы можете настроить свой браузер так, чтобы он блокировал все файлы cookie или уведомлял вас об их отправке. Инструкции для разных браузеров можно найти в настройках конфиденциальности вашего браузера.</p>
-
+            <p>Вы можете настроить свой браузер так, чтобы он блокировал все файлы cookie или уведомлял вас об их отправке.</p>
             <h3>5. Изменения в политике</h3>
-            <p>Мы можем обновлять эту политику конфиденциальности время от времени. Все изменения будут опубликованы на этой странице.</p>
+            <p>Мы можем обновлять эту политику время от времени. Все изменения будут опубликованы на этой странице.</p>
         </div>
     </div>
 
-    <!-- ФУТЕР -->
     <div class="footer">
         © 2026 MathSolve — Бесплатный решатель задач | <a onclick="openPrivacy()">Политика конфиденциальности</a> | По вопросам рекламы: iserega.zorin@yandex.ru
     </div>
 
     <script>
-        // ========== МОДАЛЬНОЕ ОКНО ==========
         function openPrivacy() {
             document.getElementById('privacyModal').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-
         function closePrivacy() {
             document.getElementById('privacyModal').classList.remove('active');
             document.body.style.overflow = '';
         }
-
         document.getElementById('privacyModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePrivacy();
-            }
+            if (e.target === this) closePrivacy();
         });
-
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closePrivacy();
-            }
+            if (e.key === 'Escape') closePrivacy();
         });
 
-        // ========== РЕШАТЕЛЬ ==========
         function solveMath() {
             const input = document.getElementById('mathInput').value.trim();
             const solutionBox = document.getElementById('solutionBox');
             const stepsContainer = document.getElementById('stepsContainer');
             const finalAnswer = document.getElementById('finalAnswer');
-
-            if (!input) {
-                alert('Введи пример или уравнение 🙏');
-                return;
-            }
-
+            if (!input) { alert('Введи пример или уравнение 🙏'); return; }
             solutionBox.classList.add('active');
             stepsContainer.innerHTML = '';
             finalAnswer.textContent = '';
-
-            const normalized = input
-                .replace(/\^/g, '**')
-                .replace(/√/g, 'sqrt')
-                .replace(/×/g, '*')
-                .replace(/÷/g, '/')
-                .replace(/\s+/g, '');
-
+            const normalized = input.replace(/\^/g, '**').replace(/√/g, 'sqrt').replace(/×/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
             try {
-                if (normalized.includes('=')) {
-                    solveEquation(normalized, stepsContainer, finalAnswer);
-                } else if (normalized.includes('/') && normalized.includes('(')) {
-                    solveFraction(normalized, stepsContainer, finalAnswer);
-                } else if (normalized.includes('sqrt')) {
-                    solveWithRoots(normalized, stepsContainer, finalAnswer);
-                } else {
-                    solveExpression(normalized, stepsContainer, finalAnswer);
-                }
+                if (normalized.includes('=')) solveEquation(normalized, stepsContainer, finalAnswer);
+                else if (normalized.includes('/') && normalized.includes('(')) solveFraction(normalized, stepsContainer, finalAnswer);
+                else if (normalized.includes('sqrt')) solveWithRoots(normalized, stepsContainer, finalAnswer);
+                else solveExpression(normalized, stepsContainer, finalAnswer);
             } catch (e) {
                 stepsContainer.innerHTML = '<div class="step">⚠️ Не удалось распознать выражение. Проверь ввод.</div>';
                 finalAnswer.textContent = 'Ошибка';
-                console.error('Ошибка решения:', e);
             }
         }
 
         function solveEquation(expr, stepsContainer, finalAnswer) {
             const parts = expr.split('=');
-            const left = parts[0];
-            const right = parts[1] || '0';
-
+            const left = parts[0], right = parts[1] || '0';
             stepsContainer.innerHTML += `<div class="step"><span class="step-num">1</span>Переносим всё в левую часть: <code>${left} = ${right}</code> → <code>${left} - (${right}) = 0</code></div>`;
-
             const simplified = simplifyQuadratic(left, right);
             if (simplified) {
                 const { a, b, c } = simplified;
-                stepsContainer.innerHTML +=
-                    `<div class="step"><span class="step-num">2</span>Приводим к стандартному виду: <code>${a}x² + ${b}x + ${c} = 0</code></div>`;
-
+                stepsContainer.innerHTML += `<div class="step"><span class="step-num">2</span>Приводим к стандартному виду: <code>${a}x² + ${b}x + ${c} = 0</code></div>`;
                 const D = b * b - 4 * a * c;
-                stepsContainer.innerHTML +=
-                    `<div class="step"><span class="step-num">3</span>Считаем дискриминант: <code>D = ${b}² - 4·${a}·${c} = ${b*b} - ${4*a*c} = ${D}</code></div>`;
-
+                stepsContainer.innerHTML += `<div class="step"><span class="step-num">3</span>Считаем дискриминант: <code>D = ${b}² - 4·${a}·${c} = ${b*b} - ${4*a*c} = ${D}</code></div>`;
                 if (D > 0) {
                     const sqrtD = Math.sqrt(D);
                     const x1 = ((-b + sqrtD) / (2 * a)).toFixed(2);
                     const x2 = ((-b - sqrtD) / (2 * a)).toFixed(2);
-                    stepsContainer.innerHTML +=
-                        `<div class="step"><span class="step-num">4</span>D > 0, значит два корня. Считаем:
-                        <br>x₁ = (-b + √D) / 2a = (${-b} + ${sqrtD.toFixed(2)}) / ${2*a} = <b>${x1}</b>
-                        <br>x₂ = (-b - √D) / 2a = (${-b} - ${sqrtD.toFixed(2)}) / ${2*a} = <b>${x2}</b></div>`;
+                    stepsContainer.innerHTML += `<div class="step"><span class="step-num">4</span>D > 0, значит два корня. Считаем:<br>x₁ = (-b + √D) / 2a = (${-b} + ${sqrtD.toFixed(2)}) / ${2*a} = <b>${x1}</b><br>x₂ = (-b - √D) / 2a = (${-b} - ${sqrtD.toFixed(2)}) / ${2*a} = <b>${x2}</b></div>`;
                     finalAnswer.textContent = `Ответ: x₁ = ${x1}, x₂ = ${x2}`;
                 } else if (D === 0) {
                     const x = (-b / (2 * a)).toFixed(2);
-                    stepsContainer.innerHTML +=
-                        `<div class="step"><span class="step-num">4</span>D = 0, один корень: x = -b / 2a = <b>${x}</b></div>`;
+                    stepsContainer.innerHTML += `<div class="step"><span class="step-num">4</span>D = 0, один корень: x = -b / 2a = <b>${x}</b></div>`;
                     finalAnswer.textContent = `Ответ: x = ${x}`;
                 } else {
-                    stepsContainer.innerHTML +=
-                        `<div class="step"><span class="step-num">4</span>D < 0 → действительных корней нет.</div>`;
+                    stepsContainer.innerHTML += `<div class="step"><span class="step-num">4</span>D < 0 → действительных корней нет.</div>`;
                     finalAnswer.textContent = 'Ответ: нет действительных корней';
                 }
             } else {
-                stepsContainer.innerHTML +=
-                    `<div class="step"><span class="step-num">2</span>Уравнение решается линейно. Пробуем вычислить приближённо...</div>`;
+                stepsContainer.innerHTML += `<div class="step"><span class="step-num">2</span>Уравнение решается линейно. Пробуем вычислить приближённо...</div>`;
                 finalAnswer.textContent = 'Ответ: ' + eval(expr.replace('=', '==')) ? 'решение не найдено' : 'проверь ввод';
             }
         }
@@ -533,53 +472,27 @@
                 const a = aMatch ? parseFloat(aMatch[1]) : (combined.includes('x**2') ? 1 : 0);
                 const b = bMatch ? parseFloat(bMatch[1]) : 0;
                 const c = eval(combined.replace(/x\*\*2/g, '0').replace(/x(?!\*\*)/g, '0')) || 0;
-
                 return { a, b, c: Math.round(c) };
-            } catch (e) {
-                return null;
-            }
+            } catch (e) { return null; }
         }
 
         function solveFraction(expr, stepsContainer, finalAnswer) {
             stepsContainer.innerHTML += `<div class="step"><span class="step-num">1</span>Анализируем дробь: <code>${expr}</code></div>`;
-            stepsContainer.innerHTML +=
-                `<div class="step"><span class="step-num">2</span>Раскладываем числитель и знаменатель на множители (если возможно)</div>`;
-            stepsContainer.innerHTML +=
-                `<div class="step"><span class="step-num">3</span>Сокращаем общие скобки при условии, что знаменатель ≠ 0</div>`;
-            try {
-                const result = eval(expr);
-                finalAnswer.textContent = `Ответ: ${result}`;
-            } catch (e) {
-                finalAnswer.textContent = 'Не удалось вычислить дробь';
-            }
+            stepsContainer.innerHTML += `<div class="step"><span class="step-num">2</span>Раскладываем числитель и знаменатель на множители</div>`;
+            stepsContainer.innerHTML += `<div class="step"><span class="step-num">3</span>Сокращаем общие скобки при условии, что знаменатель ≠ 0</div>`;
+            try { finalAnswer.textContent = `Ответ: ${eval(expr)}`; } catch (e) { finalAnswer.textContent = 'Не удалось вычислить дробь'; }
         }
 
         function solveWithRoots(expr, stepsContainer, finalAnswer) {
             stepsContainer.innerHTML += `<div class="step"><span class="step-num">1</span>Работаем с корнями: <code>${expr.replace(/\*\*/g, '^')}</code></div>`;
-            stepsContainer.innerHTML +=
-                `<div class="step"><span class="step-num">2</span>Поочерёдно вычисляем значения под корнями</div>`;
-            try {
-                const result = eval(expr);
-                stepsContainer.innerHTML +=
-                    `<div class="step"><span class="step-num">3</span>Складываем/умножаем результаты</div>`;
-                finalAnswer.textContent = `Ответ: ${result}`;
-            } catch (e) {
-                finalAnswer.textContent = 'Ошибка вычисления';
-            }
+            stepsContainer.innerHTML += `<div class="step"><span class="step-num">2</span>Поочерёдно вычисляем значения под корнями</div>`;
+            try { const result = eval(expr); stepsContainer.innerHTML += `<div class="step"><span class="step-num">3</span>Складываем/умножаем результаты</div>`; finalAnswer.textContent = `Ответ: ${result}`; } catch (e) { finalAnswer.textContent = 'Ошибка вычисления'; }
         }
 
         function solveExpression(expr, stepsContainer, finalAnswer) {
             stepsContainer.innerHTML += `<div class="step"><span class="step-num">1</span>Вычисляем выражение: <code>${expr}</code></div>`;
-            stepsContainer.innerHTML +=
-                `<div class="step"><span class="step-num">2</span>Соблюдаем порядок действий: скобки → умножение/деление → сложение/вычитание</div>`;
-            try {
-                const result = eval(expr);
-                stepsContainer.innerHTML +=
-                    `<div class="step"><span class="step-num">3</span>Результат вычисления</div>`;
-                finalAnswer.textContent = `Ответ: ${result}`;
-            } catch (e) {
-                finalAnswer.textContent = 'Ошибка в выражении';
-            }
+            stepsContainer.innerHTML += `<div class="step"><span class="step-num">2</span>Соблюдаем порядок действий: скобки → умножение/деление → сложение/вычитание</div>`;
+            try { const result = eval(expr); stepsContainer.innerHTML += `<div class="step"><span class="step-num">3</span>Результат вычисления</div>`; finalAnswer.textContent = `Ответ: ${result}`; } catch (e) { finalAnswer.textContent = 'Ошибка в выражении'; }
         }
 
         function clearAll() {
@@ -590,10 +503,7 @@
         }
 
         document.getElementById('mathInput').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                solveMath();
-            }
+            if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); solveMath(); }
         });
     </script>
 
