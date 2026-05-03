@@ -18,16 +18,11 @@
             --subtext: #94a3b8;
             --border: #334155;
             --success: #22c55e;
-            --warning: #f59e0b;
             --radius: 16px;
             --radius-sm: 10px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -41,283 +36,92 @@
             line-height: 1.5;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+        .header { text-align: center; margin-bottom: 30px; }
         .header h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
+            font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px;
             background: linear-gradient(135deg, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-        .header p {
-            color: var(--subtext);
-            font-size: 0.95rem;
-            margin-top: 4px;
-        }
+        .header p { color: var(--subtext); font-size: 0.95rem; margin-top: 4px; }
 
         .main-grid {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 20px;
-            width: 100%;
-            max-width: 950px;
-            align-items: start;
+            display: grid; grid-template-columns: 1fr 300px; gap: 20px;
+            width: 100%; max-width: 950px; align-items: start;
         }
 
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 24px;
-        }
-
-        .card h2 {
-            font-size: 1.1rem;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .card h2 .icon {
-            font-size: 1.3rem;
-        }
-
-        textarea {
-            width: 100%;
-            height: 80px;
-            background: #0f172a;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            color: var(--text);
-            padding: 14px;
-            font-size: 1rem;
-            font-family: 'Courier New', monospace;
-            resize: vertical;
-        }
-        textarea::placeholder {
-            color: #64748b;
-        }
-        textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
-        }
-
-        .btn-row {
-            display: flex;
-            gap: 10px;
-            margin-top: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 12px 20px;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-        }
-        .btn-primary:hover {
-            background: #2563eb;
-            transform: translateY(-1px);
-        }
-        .btn-ghost {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text);
-        }
-        .btn-ghost:hover {
-            background: #263148;
-        }
-
-        .solution-box {
+        .ad-block-full {
+            width: 100%; max-width: 950px;
             margin-top: 20px;
-            background: #0f172a;
-            border-radius: var(--radius-sm);
-            padding: 20px;
-            border: 1px solid var(--border);
-            min-height: 60px;
-            display: none;
-        }
-        .solution-box.active {
-            display: block;
-        }
-        .solution-box h3 {
-            font-size: 0.85rem;
-            color: var(--success);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-        .solution-box .step {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.95rem;
-        }
-        .solution-box .step:last-child {
-            border-bottom: none;
-        }
-        .solution-box .step .step-num {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            background: var(--primary);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 24px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-right: 10px;
-        }
-        .solution-box .final-answer {
-            margin-top: 14px;
-            padding: 14px;
-            background: #1a3a2a;
-            border: 1px solid #22c55e40;
-            border-radius: var(--radius-sm);
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-align: center;
-            color: #4ade80;
-        }
-
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .sidebar .card {
-            padding: 18px;
-        }
-        .sidebar .card h3 {
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-        .sidebar .card ul {
-            list-style: none;
-            font-size: 0.85rem;
-            color: var(--subtext);
-        }
-        .sidebar .card ul li {
-            padding: 6px 0;
-            border-bottom: 1px solid #263148;
-        }
-        .sidebar .card ul li:last-child {
-            border-bottom: none;
-        }
-        .sidebar .card ul li::before {
-            content: '✓ ';
-            color: var(--success);
-            font-weight: 700;
-        }
-
-        .ad-card {
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 16px;
+            padding: 20px;
             min-height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
+
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+        .card h2 { font-size: 1.1rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .card h2 .icon { font-size: 1.3rem; }
+
+        textarea {
+            width: 100%; height: 80px; background: #0f172a; border: 1px solid var(--border);
+            border-radius: var(--radius-sm); color: var(--text); padding: 14px; font-size: 1rem;
+            font-family: 'Courier New', monospace; resize: vertical;
+        }
+        textarea::placeholder { color: #64748b; }
+        textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
+
+        .btn-row { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+        .btn { padding: 12px 20px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem; cursor: pointer; border: none; transition: all 0.2s ease; display: flex; align-items: center; gap: 6px; }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-primary:hover { background: #2563eb; transform: translateY(-1px); }
+        .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+        .btn-ghost:hover { background: #263148; }
+
+        .solution-box { margin-top: 20px; background: #0f172a; border-radius: var(--radius-sm); padding: 20px; border: 1px solid var(--border); min-height: 60px; display: none; }
+        .solution-box.active { display: block; }
+        .solution-box h3 { font-size: 0.85rem; color: var(--success); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        .solution-box .step { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+        .solution-box .step:last-child { border-bottom: none; }
+        .solution-box .step .step-num { display: inline-block; width: 24px; height: 24px; background: var(--primary); border-radius: 50%; text-align: center; line-height: 24px; font-size: 0.75rem; font-weight: 700; margin-right: 10px; }
+        .solution-box .final-answer { margin-top: 14px; padding: 14px; background: #1a3a2a; border: 1px solid #22c55e40; border-radius: var(--radius-sm); font-size: 1.2rem; font-weight: 700; text-align: center; color: #4ade80; }
+
+        .sidebar { display: flex; flex-direction: column; gap: 16px; }
+        .sidebar .card { padding: 18px; }
+        .sidebar .card h3 { font-size: 0.9rem; margin-bottom: 10px; }
+        .sidebar .card ul { list-style: none; font-size: 0.85rem; color: var(--subtext); }
+        .sidebar .card ul li { padding: 6px 0; border-bottom: 1px solid #263148; }
+        .sidebar .card ul li:last-child { border-bottom: none; }
+        .sidebar .card ul li::before { content: '✓ '; color: var(--success); font-weight: 700; }
 
         .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); z-index: 1000;
+            justify-content: center; align-items: center; padding: 20px;
         }
-        .modal-overlay.active {
-            display: flex;
-        }
+        .modal-overlay.active { display: flex; }
         .modal {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 30px;
-            max-width: 650px;
-            width: 100%;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
+            background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 30px; max-width: 650px; width: 100%; max-height: 80vh; overflow-y: auto; position: relative;
         }
-        .modal h2 {
-            font-size: 1.3rem;
-            margin-bottom: 16px;
-        }
-        .modal h3 {
-            font-size: 1rem;
-            margin: 16px 0 8px;
-            color: #60a5fa;
-        }
-        .modal p {
-            font-size: 0.9rem;
-            color: var(--subtext);
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        .modal .close-btn {
-            position: absolute;
-            top: 16px;
-            right: 20px;
-            background: none;
-            border: none;
-            color: var(--text);
-            font-size: 1.5rem;
-            cursor: pointer;
-            line-height: 1;
-        }
-        .modal .close-btn:hover {
-            color: #f87171;
-        }
+        .modal h2 { font-size: 1.3rem; margin-bottom: 16px; }
+        .modal h3 { font-size: 1rem; margin: 16px 0 8px; color: #60a5fa; }
+        .modal p { font-size: 0.9rem; color: var(--subtext); margin-bottom: 10px; line-height: 1.6; }
+        .modal .close-btn { position: absolute; top: 16px; right: 20px; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; line-height: 1; }
+        .modal .close-btn:hover { color: #f87171; }
 
-        .footer {
-            margin-top: 30px;
-            text-align: center;
-            font-size: 0.75rem;
-            color: #475569;
-        }
-        .footer a {
-            color: #60a5fa;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
+        .footer { margin-top: 30px; text-align: center; font-size: 0.75rem; color: #475569; }
+        .footer a { color: #60a5fa; text-decoration: none; cursor: pointer; }
+        .footer a:hover { text-decoration: underline; }
 
         @media (max-width: 768px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-            }
-            .header h1 {
-                font-size: 1.6rem;
-            }
-            .modal {
-                padding: 20px;
-            }
+            .main-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 1.6rem; }
+            .modal { padding: 20px; }
         }
     </style>
 </head>
@@ -332,7 +136,7 @@
 
         <div class="card">
             <h2><span class="icon">✏️</span> Введи задачу</h2>
-            <textarea id="mathInput" placeholder="Например: 2*x^2 - 8 = 0   или   (x^2-4)/(x-2)   или   3*sqrt(49) + 12"></textarea>
+            <textarea id="mathInput" placeholder="2*x^2 - 8 = 0   или   (x^2-4)/(x-2)   или   3*sqrt(49) + 12"></textarea>
             <div class="btn-row">
                 <button class="btn btn-primary" onclick="solveMath()">🔍 Решить</button>
                 <button class="btn btn-ghost" onclick="clearAll()">🗑 Очистить</button>
@@ -346,20 +150,6 @@
         </div>
 
         <div class="sidebar">
-
-            <!-- БЛОК РЕКЛАМЫ РСЯ -->
-            <div class="ad-card">
-                <div id="yandex_rtb_R-A-19206543-1"></div>
-                <script>
-                window.yaContextCb.push(() => {
-                    Ya.Context.AdvManager.render({
-                        "blockId": "R-A-19206543-1",
-                        "renderTo": "yandex_rtb_R-A-19206543-1"
-                    })
-                })
-                </script>
-            </div>
-
             <div class="card">
                 <h3>📚 Что решаем</h3>
                 <ul>
@@ -374,6 +164,23 @@
 
     </div>
 
+    <!-- БЛОК РЕКЛАМЫ РСЯ ПОД ВСЕМ -->
+    <div class="ad-block-full">
+        <div id="yandex_rtb_R-A-19206543-1"></div>
+        <script>
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                "blockId": "R-A-19206543-1",
+                "renderTo": "yandex_rtb_R-A-19206543-1"
+            })
+        })
+        </script>
+    </div>
+
+    <div class="footer">
+        © 2026 MathSolve — Бесплатный решатель задач | <a onclick="openPrivacy()">Политика конфиденциальности</a> | По вопросам рекламы: iserega.zorin@yandex.ru
+    </div>
+
     <div class="modal-overlay" id="privacyModal">
         <div class="modal">
             <button class="close-btn" onclick="closePrivacy()">✕</button>
@@ -382,128 +189,94 @@
             <h3>1. Какие данные мы собираем</h3>
             <p>Мы не собираем персональные данные напрямую. Вы можете пользоваться калькулятором анонимно, без регистрации.</p>
             <h3>2. Файлы cookie и реклама</h3>
-            <p>Мы используем файлы cookie для персонализации контента и рекламы, а также для анализа трафика. Мы также передаём информацию о ваших действиях на сайте нашим партнёрам по рекламе и аналитике.</p>
-            <h3>3. Яндекс.РСЯ и Google AdSense</h3>
-            <p>Яндекс и Google, как сторонние поставщики, используют файлы cookie для показа рекламы на нашем сайте.</p>
+            <p>Мы используем файлы cookie для персонализации контента и рекламы, а также для анализа трафика.</p>
+            <h3>3. Яндекс.РСЯ</h3>
+            <p>Яндекс, как сторонний поставщик, использует файлы cookie для показа рекламы на нашем сайте.</p>
+            <h3>4. Отказ от cookie</h3>
             <p>Вы можете отказаться от использования файлов cookie для персонализированной рекламы, посетив <a href="https://yandex.ru/support/id/authorization/disable-cookies.html" target="_blank" rel="noopener">настройки Яндекса</a>.</p>
-            <h3>4. Как отключить cookie в браузере</h3>
-            <p>Вы можете настроить свой браузер так, чтобы он блокировал все файлы cookie или уведомлял вас об их отправке.</p>
-            <h3>5. Изменения в политике</h3>
-            <p>Мы можем обновлять эту политику время от времени. Все изменения будут опубликованы на этой странице.</p>
         </div>
     </div>
 
-    <div class="footer">
-        © 2026 MathSolve — Бесплатный решатель задач | <a onclick="openPrivacy()">Политика конфиденциальности</a> | По вопросам рекламы: iserega.zorin@yandex.ru
-    </div>
-
     <script>
-        function openPrivacy() {
-            document.getElementById('privacyModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        function closePrivacy() {
-            document.getElementById('privacyModal').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        document.getElementById('privacyModal').addEventListener('click', function(e) {
-            if (e.target === this) closePrivacy();
-        });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closePrivacy();
-        });
+        function openPrivacy(){ document.getElementById('privacyModal').classList.add('active'); document.body.style.overflow='hidden'; }
+        function closePrivacy(){ document.getElementById('privacyModal').classList.remove('active'); document.body.style.overflow=''; }
+        document.getElementById('privacyModal').addEventListener('click',function(e){ if(e.target===this)closePrivacy(); });
+        document.addEventListener('keydown',function(e){ if(e.key==='Escape')closePrivacy(); });
 
-        function solveMath() {
-            const input = document.getElementById('mathInput').value.trim();
-            const solutionBox = document.getElementById('solutionBox');
-            const stepsContainer = document.getElementById('stepsContainer');
-            const finalAnswer = document.getElementById('finalAnswer');
-            if (!input) { alert('Введи пример или уравнение 🙏'); return; }
-            solutionBox.classList.add('active');
-            stepsContainer.innerHTML = '';
-            finalAnswer.textContent = '';
-            const normalized = input.replace(/\^/g, '**').replace(/√/g, 'sqrt').replace(/×/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
-            try {
-                if (normalized.includes('=')) solveEquation(normalized, stepsContainer, finalAnswer);
-                else if (normalized.includes('/') && normalized.includes('(')) solveFraction(normalized, stepsContainer, finalAnswer);
-                else if (normalized.includes('sqrt')) solveWithRoots(normalized, stepsContainer, finalAnswer);
-                else solveExpression(normalized, stepsContainer, finalAnswer);
-            } catch (e) {
-                stepsContainer.innerHTML = '<div class="step">⚠️ Не удалось распознать выражение. Проверь ввод.</div>';
-                finalAnswer.textContent = 'Ошибка';
-            }
+        function solveMath(){
+            const input=document.getElementById('mathInput').value.trim();
+            const box=document.getElementById('solutionBox'), steps=document.getElementById('stepsContainer'), ans=document.getElementById('finalAnswer');
+            if(!input){alert('Введи пример или уравнение');return;}
+            box.classList.add('active'); steps.innerHTML=''; ans.textContent='';
+            const norm=input.replace(/\^/g,'**').replace(/√/g,'sqrt').replace(/×/g,'*').replace(/÷/g,'/').replace(/\s+/g,'');
+            try{
+                if(norm.includes('='))solveEquation(norm,steps,ans);
+                else if(norm.includes('/')&&norm.includes('('))solveFraction(norm,steps,ans);
+                else if(norm.includes('sqrt'))solveWithRoots(norm,steps,ans);
+                else solveExpression(norm,steps,ans);
+            }catch(e){ steps.innerHTML='<div class="step">⚠️ Не удалось распознать выражение</div>'; ans.textContent='Ошибка'; }
         }
 
-        function solveEquation(expr, stepsContainer, finalAnswer) {
-            const parts = expr.split('=');
-            const left = parts[0], right = parts[1] || '0';
-            stepsContainer.innerHTML += `<div class="step"><span class="step-num">1</span>Переносим всё в левую часть: <code>${left} = ${right}</code> → <code>${left} - (${right}) = 0</code></div>`;
-            const simplified = simplifyQuadratic(left, right);
-            if (simplified) {
-                const { a, b, c } = simplified;
-                stepsContainer.innerHTML += `<div class="step"><span class="step-num">2</span>Приводим к стандартному виду: <code>${a}x² + ${b}x + ${c} = 0</code></div>`;
-                const D = b * b - 4 * a * c;
-                stepsContainer.innerHTML += `<div class="step"><span class="step-num">3</span>Считаем дискриминант: <code>D = ${b}² - 4·${a}·${c} = ${b*b} - ${4*a*c} = ${D}</code></div>`;
-                if (D > 0) {
-                    const sqrtD = Math.sqrt(D);
-                    const x1 = ((-b + sqrtD) / (2 * a)).toFixed(2);
-                    const x2 = ((-b - sqrtD) / (2 * a)).toFixed(2);
-                    stepsContainer.innerHTML += `<div class="step"><span class="step-num">4</span>D > 0, значит два корня. Считаем:<br>x₁ = (-b + √D) / 2a = (${-b} + ${sqrtD.toFixed(2)}) / ${2*a} = <b>${x1}</b><br>x₂ = (-b - √D) / 2a = (${-b} - ${sqrtD.toFixed(2)}) / ${2*a} = <b>${x2}</b></div>`;
-                    finalAnswer.textContent = `Ответ: x₁ = ${x1}, x₂ = ${x2}`;
-                } else if (D === 0) {
-                    const x = (-b / (2 * a)).toFixed(2);
-                    stepsContainer.innerHTML += `<div class="step"><span class="step-num">4</span>D = 0, один корень: x = -b / 2a = <b>${x}</b></div>`;
-                    finalAnswer.textContent = `Ответ: x = ${x}`;
-                } else {
-                    stepsContainer.innerHTML += `<div class="step"><span class="step-num">4</span>D < 0 → действительных корней нет.</div>`;
-                    finalAnswer.textContent = 'Ответ: нет действительных корней';
-                }
-            } else {
-                stepsContainer.innerHTML += `<div class="step"><span class="step-num">2</span>Уравнение решается линейно. Пробуем вычислить приближённо...</div>`;
-                finalAnswer.textContent = 'Ответ: ' + eval(expr.replace('=', '==')) ? 'решение не найдено' : 'проверь ввод';
-            }
+        function solveEquation(expr,steps,ans){
+            const p=expr.split('='), l=p[0], r=p[1]||'0';
+            steps.innerHTML+=`<div class="step"><span class="step-num">1</span>Переносим: <code>${l}=${r}</code> → <code>${l}-(${r})=0</code></div>`;
+            const q=simplifyQuadratic(l,r);
+            if(q){
+                const{a,b,c}=q;
+                steps.innerHTML+=`<div class="step"><span class="step-num">2</span>Вид: <code>${a}x²+${b}x+${c}=0</code></div>`;
+                const D=b*b-4*a*c;
+                steps.innerHTML+=`<div class="step"><span class="step-num">3</span>D=${b}²-4·${a}·${c}=${D}</div>`;
+                if(D>0){
+                    const s=Math.sqrt(D), x1=((-b+s)/(2*a)).toFixed(2), x2=((-b-s)/(2*a)).toFixed(2);
+                    steps.innerHTML+=`<div class="step"><span class="step-num">4</span>D>0, два корня:<br>x₁=${x1}<br>x₂=${x2}</div>`;
+                    ans.textContent=`Ответ: x₁=${x1}, x₂=${x2}`;
+                }else if(D===0){
+                    const x=(-b/(2*a)).toFixed(2);
+                    steps.innerHTML+=`<div class="step"><span class="step-num">4</span>D=0, корень: x=${x}</div>`;
+                    ans.textContent=`Ответ: x=${x}`;
+                }else{ steps.innerHTML+=`<div class="step"><span class="step-num">4</span>D<0 → корней нет</div>`; ans.textContent='Нет действительных корней'; }
+            }else{ steps.innerHTML+=`<div class="step"><span class="step-num">2</span>Решаем линейно...</div>`; ans.textContent='Ответ: проверь ввод'; }
         }
 
-        function simplifyQuadratic(left, right) {
-            try {
-                const combined = `(${left})-(${right})`;
-                const aMatch = combined.match(/([-\d.]+)\*?x\*\*2/);
-                const bMatch = combined.match(/([-\d.]+)\*?x(?!\*\*)/);
-                const a = aMatch ? parseFloat(aMatch[1]) : (combined.includes('x**2') ? 1 : 0);
-                const b = bMatch ? parseFloat(bMatch[1]) : 0;
-                const c = eval(combined.replace(/x\*\*2/g, '0').replace(/x(?!\*\*)/g, '0')) || 0;
-                return { a, b, c: Math.round(c) };
-            } catch (e) { return null; }
+        function simplifyQuadratic(l,r){
+            try{
+                const c=`(${l})-(${r})`;
+                const am=c.match(/([-\d.]+)\*?x\*\*2/), bm=c.match(/([-\d.]+)\*?x(?!\*\*)/);
+                const a=am?parseFloat(am[1]):(c.includes('x**2')?1:0);
+                const b=bm?parseFloat(bm[1]):0;
+                const cv=eval(c.replace(/x\*\*2/g,'0').replace(/x(?!\*\*)/g,'0'))||0;
+                return{a,b,c:Math.round(cv)};
+            }catch(e){return null;}
         }
 
-        function solveFraction(expr, stepsContainer, finalAnswer) {
-            stepsContainer.innerHTML += `<div class="step"><span class="step-num">1</span>Анализируем дробь: <code>${expr}</code></div>`;
-            stepsContainer.innerHTML += `<div class="step"><span class="step-num">2</span>Раскладываем числитель и знаменатель на множители</div>`;
-            stepsContainer.innerHTML += `<div class="step"><span class="step-num">3</span>Сокращаем общие скобки при условии, что знаменатель ≠ 0</div>`;
-            try { finalAnswer.textContent = `Ответ: ${eval(expr)}`; } catch (e) { finalAnswer.textContent = 'Не удалось вычислить дробь'; }
+        function solveFraction(expr,steps,ans){
+            steps.innerHTML+=`<div class="step"><span class="step-num">1</span>Дробь: <code>${expr}</code></div>`;
+            steps.innerHTML+=`<div class="step"><span class="step-num">2</span>Раскладываем на множители</div>`;
+            steps.innerHTML+=`<div class="step"><span class="step-num">3</span>Сокращаем (знаменатель≠0)</div>`;
+            try{ans.textContent=`Ответ: ${eval(expr)}`;}catch(e){ans.textContent='Не удалось вычислить';}
         }
 
-        function solveWithRoots(expr, stepsContainer, finalAnswer) {
-            stepsContainer.innerHTML += `<div class="step"><span class="step-num">1</span>Работаем с корнями: <code>${expr.replace(/\*\*/g, '^')}</code></div>`;
-            stepsContainer.innerHTML += `<div class="step"><span class="step-num">2</span>Поочерёдно вычисляем значения под корнями</div>`;
-            try { const result = eval(expr); stepsContainer.innerHTML += `<div class="step"><span class="step-num">3</span>Складываем/умножаем результаты</div>`; finalAnswer.textContent = `Ответ: ${result}`; } catch (e) { finalAnswer.textContent = 'Ошибка вычисления'; }
+        function solveWithRoots(expr,steps,ans){
+            steps.innerHTML+=`<div class="step"><span class="step-num">1</span>Корни: <code>${expr.replace(/\*\*/g,'^')}</code></div>`;
+            steps.innerHTML+=`<div class="step"><span class="step-num">2</span>Считаем под корнями</div>`;
+            try{const r=eval(expr); steps.innerHTML+=`<div class="step"><span class="step-num">3</span>Результат</div>`; ans.textContent=`Ответ: ${r}`;}catch(e){ans.textContent='Ошибка';}
         }
 
-        function solveExpression(expr, stepsContainer, finalAnswer) {
-            stepsContainer.innerHTML += `<div class="step"><span class="step-num">1</span>Вычисляем выражение: <code>${expr}</code></div>`;
-            stepsContainer.innerHTML += `<div class="step"><span class="step-num">2</span>Соблюдаем порядок действий: скобки → умножение/деление → сложение/вычитание</div>`;
-            try { const result = eval(expr); stepsContainer.innerHTML += `<div class="step"><span class="step-num">3</span>Результат вычисления</div>`; finalAnswer.textContent = `Ответ: ${result}`; } catch (e) { finalAnswer.textContent = 'Ошибка в выражении'; }
+        function solveExpression(expr,steps,ans){
+            steps.innerHTML+=`<div class="step"><span class="step-num">1</span>Выражение: <code>${expr}</code></div>`;
+            steps.innerHTML+=`<div class="step"><span class="step-num">2</span>Порядок действий: () → ·/÷ → +/−</div>`;
+            try{const r=eval(expr); steps.innerHTML+=`<div class="step"><span class="step-num">3</span>Готово</div>`; ans.textContent=`Ответ: ${r}`;}catch(e){ans.textContent='Ошибка в выражении';}
         }
 
-        function clearAll() {
-            document.getElementById('mathInput').value = '';
+        function clearAll(){
+            document.getElementById('mathInput').value='';
             document.getElementById('solutionBox').classList.remove('active');
-            document.getElementById('stepsContainer').innerHTML = '';
-            document.getElementById('finalAnswer').textContent = '';
+            document.getElementById('stepsContainer').innerHTML='';
+            document.getElementById('finalAnswer').textContent='';
         }
 
-        document.getElementById('mathInput').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); solveMath(); }
+        document.getElementById('mathInput').addEventListener('keydown',function(e){
+            if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); solveMath(); }
         });
     </script>
 
